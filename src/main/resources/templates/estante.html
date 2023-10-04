@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -29,11 +29,11 @@
 
             <label for="descripcion">Descripción</label> <br>
             <input type="text" th:field="*{descripcion}" required>
-            <br>
+            <br> -->
 
             <!-- ------------------------------------------- -->
 
-            <br>
+            <!-- <br>
 
             <label for="idAlmacen">Selecione el Almacen</label> <br>
 
@@ -42,21 +42,21 @@
                 <option th:each="almacen: ${listaAlmacenes}" th:value="${almacen.idAlmacen}"
                     th:text="${almacen.nombreUnico}" th:if="${almacen.estado.name()=='ACTIVO'}"></option>
 
-            </select><br>
+            </select><br> -->
 
             <!-- ------------------------------------------------- -->
-
+<!-- 
             <label for="idIngredientes">Selecione los ingredientes</label> <br>
             <select multiple="multiple" th:field="*{ingredientes}">
 
                 <option th:each="ingrediente: ${listIngredientes}" th:value="${ingrediente.idIngredientes}"
                     th:text="${ingrediente.nombre}" th:if="${ingrediente.estado.name()=='ACTIVO'}"></option>
 
-            </select>
+            </select> -->
 
             <!-- --------------------------------------------------- -->
 
-            <br>
+            <!-- <br>
 
             <label>Lista de Estados</label>
 
@@ -68,26 +68,26 @@
                 </li>
             </ul>
 
-            <br>
+            <br> -->
 
             <!-- ---------------------------------------------------- -->
 
-            <br>
+            <!-- <br>
             <input type="submit" name="Enviar" value="Enviar">
 
         </form>
 
-    </th:block>
+    </th:block> -->
 
     <!-- ------------------------------------------------------------------------- -->
 
     <!-- ------------------------------------------------------------------------- -->
 
-    <th:block th:if="${funcionalidad=='lista'}">
+    <!-- <th:block th:if="${funcionalidad=='lista'}">
 
         <a th:href="@{/estante/formulario-registrar}">Registrar Estante</a>
 
-        <!-- Buscador  -->
+       
 
 
         <form th:action="@{/estante/listar}" method="get">
@@ -160,4 +160,4 @@
 
 </body>
 
-</html>
+</html> -->

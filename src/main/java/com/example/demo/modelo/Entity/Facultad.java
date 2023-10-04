@@ -1,49 +1,41 @@
 package com.example.demo.modelo.Entity;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
-@Table(name = "persona")
+@Table (name = "facultad")
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Persona{
+public class Facultad {
 
-    @Id
+      @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id_facultad;
 
-    private Long id_persona;
-    
-    private String ci;
-    
-    private String nombre;
+    private String nombre_facultad;
+    private String sigla;
+    private Boolean estado_facultad;
 
-    private String apellido;
+    //-------------------RELACIONES--------------
 
-    private String telefojoFijo;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "facultad")
+    private List<Carrera> carreras;
 
-    private String celular;
-
-
-    //---------------Relaciones--------------------------
-
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "persona")
-    private Tipo_Persona tipo_Persona;
-
-    //--------------------------
+    //---------------------------------
 
 }
