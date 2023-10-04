@@ -7,8 +7,6 @@ import org.springframework.stereotype.Service;
 import com.example.demo.modelo.Entity.Carrera;
 import com.example.demo.modelo.Servicio.interfaces.ICarreraService;
 import com.example.demo.modelo.Dao.CarreraDao;
-
-
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
