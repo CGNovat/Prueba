@@ -4,7 +4,10 @@ package com.example.demo.modelo.Servicio.Impls;
 import java.util.List;
 //modifique la carpeta servicio att tefy
 import org.springframework.stereotype.Service;
+
+import com.example.demo.modelo.Dao.CarreraDao;
 import com.example.demo.modelo.Dao.FacultadDao;
+import com.example.demo.modelo.Entity.Carrera;
 import com.example.demo.modelo.Entity.Facultad;
 import com.example.demo.modelo.Servicio.interfaces.IFacultadService;
 
@@ -14,29 +17,31 @@ import lombok.RequiredArgsConstructor;
 @Service
 public class IFacultadImpl implements IFacultadService{
 
+    private final FacultadDao facultadDao;
 
+       
     @Override
-    public List<Facultad> findAll() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+    public List<Facultad> ListFacultad() {
+        
+       return facultadDao.findAll();
+    }
+
+ @Override
+    public Facultad Guardar(Facultad carrera) {
+       
+        return facultadDao.save(carrera);
     }
 
     @Override
-    public void save(Facultad facultad) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
-    }
-
-    @Override
-    public Facultad findOne(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findOne'");
+    public Facultad buscarPorId(Long id) {
+        return facultadDao.findById(id).orElse(null);
+        
     }
 
     @Override
     public void delete(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+       
+        
     }
 
 }

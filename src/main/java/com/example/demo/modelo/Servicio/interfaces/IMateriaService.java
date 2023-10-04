@@ -6,11 +6,11 @@ import com.example.demo.modelo.Entity.Materia;
 
 public interface IMateriaService {
 
-    public List<Materia> findAll(); // MOSTRAR TODOS LOS REGSITROS
+public List<Materia> ListMateria(); //MOSTRAR TODOS LOS REGSITROS
 
-    public void save(Materia materia); // GUARDAR REGISTRO
+    public Materia Guardar(Materia materia);  //GUARDAR REGISTRO
 
-    public Materia findOne(Long id); // MOSTRAR UN REGSITRO
+    public Materia buscarPorId(Long id);  // MOSTRAR UN REGSITRO
 
     public void delete(Long id); // ELIMINAR REGISTRO
 

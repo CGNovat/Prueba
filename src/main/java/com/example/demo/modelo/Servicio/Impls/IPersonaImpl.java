@@ -3,6 +3,9 @@ package com.example.demo.modelo.Servicio.Impls;
 import java.util.List;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.modelo.Dao.MateriaDao;
+import com.example.demo.modelo.Dao.PersonaDao;
+import com.example.demo.modelo.Entity.Materia;
 import com.example.demo.modelo.Entity.Persona;
 import com.example.demo.modelo.Servicio.interfaces.IPersonaService;
 import lombok.RequiredArgsConstructor;
@@ -12,29 +15,31 @@ import lombok.RequiredArgsConstructor;
 public class IPersonaImpl implements IPersonaService{
 
     
+ private final PersonaDao personaDao;
 
+       
     @Override
-    public List<Persona> findAll() {
-      
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
-    }
-
-    @Override
-    public void save(Persona persona) {
-      
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
-    }
-
-    @Override
-    public Persona findOne(Long id) {
+    public List<Persona> ListPersona() {
         
-        throw new UnsupportedOperationException("Unimplemented method 'findOne'");
+       return personaDao.findAll();
+    }
+
+ @Override
+    public Persona Guardar(Persona persona) {
+       
+        return personaDao.save(persona);
+    }
+
+    @Override
+    public Persona buscarPorId(Long id) {
+        return personaDao.findById(id).orElse(null);
+        
     }
 
     @Override
     public void delete(Long id) {
        
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+        
     }
     
 

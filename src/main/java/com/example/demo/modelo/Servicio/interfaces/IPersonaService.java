@@ -6,12 +6,12 @@ import com.example.demo.modelo.Entity.Persona;
 
 public interface IPersonaService {
 
-    public List<Persona> findAll();
+public List<Persona> ListPersona(); //MOSTRAR TODOS LOS REGSITROS
 
-    public void save(Persona persona);
+    public Persona Guardar(Persona persona);  //GUARDAR REGISTRO
 
-    public Persona findOne(Long id);
+    public Persona buscarPorId(Long id);  // MOSTRAR UN REGSITRO
 
-    public void delete(Long id);
+    public void delete(Long id); // ELIMINAR REGISTRO
     
 }

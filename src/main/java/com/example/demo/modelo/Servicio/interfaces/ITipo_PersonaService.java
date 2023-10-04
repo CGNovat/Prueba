@@ -5,11 +5,11 @@ import com.example.demo.modelo.Entity.Tipo_Persona;
 
 public interface ITipo_PersonaService {
     
-    public List<Tipo_Persona> findAll();
+public List<Tipo_Persona> ListTipo_Persona(); //MOSTRAR TODOS LOS REGSITROS
 
-    public void save(Tipo_Persona tipopersona);
+    public Tipo_Persona Guardar(Tipo_Persona tipo_Persona);  //GUARDAR REGISTRO
 
-    public Tipo_Persona findOne(Long id);
+    public Tipo_Persona buscarPorId(Long id);  // MOSTRAR UN REGSITRO
 
-    public void delete(Long id);
+    public void delete(Long id); // ELIMINAR REGISTRO
 }
