@@ -17,7 +17,6 @@ public class IMateriaImpl implements IMateriaService {
 
     @Override
     public List<Materia> findAll() {
-
         return (List<Materia>) materiaDao.findAll();
     }
 
