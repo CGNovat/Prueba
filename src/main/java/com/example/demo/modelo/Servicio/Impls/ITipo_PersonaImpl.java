@@ -4,9 +4,10 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.example.demo.modelo.Servicio.interfaces.ITipo_PersonaService;
+
 import lombok.RequiredArgsConstructor;
 import com.example.demo.modelo.Entity.Tipo_Persona;
-import com.example.demo.modelo.Servicio.interfaces.ITipo_PersonaService;
 import com.example.demo.modelo.Dao.Tipo_personaDao;
 
 @RequiredArgsConstructor
@@ -38,8 +39,7 @@ public class ITipo_PersonaImpl implements ITipo_PersonaService{
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'delete'");
     }
-    
-    
 
+    
 
 }

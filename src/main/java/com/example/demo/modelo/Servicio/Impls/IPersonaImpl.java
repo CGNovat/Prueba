@@ -5,7 +5,9 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.modelo.Entity.Persona;
 import com.example.demo.modelo.Servicio.interfaces.IPersonaService;
-import com.example.demo.modelo.Dao.PersonaDao;
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
 @Service
 public class IPersonaImpl implements IPersonaService{
 
