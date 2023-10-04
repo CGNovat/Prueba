@@ -27,17 +27,6 @@ import lombok.Setter;
 @Setter
 public class Tipo_Persona {
 
-//   @ManyToOne(fetch = FetchType.LAZY)
-//   @JoinColumn(name = "almacen_id_almacen")
-//   private Almacen almacen;
-
-// @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
-//     @JoinTable(name = "estante_ingredientes",
-//     joinColumns = @JoinColumn(name = "id_estante"), 
-//     inverseJoinColumns = @JoinColumn(name = "id_ingredientes"), 
-//     uniqueConstraints = @UniqueConstraint(columnNames = {"id_estante", "id_ingredientes" }))
-//     private List<Ingredientes> ingredientes;
-
   // ----------------------------------------------------------------
 
 
@@ -64,3 +53,15 @@ public class Tipo_Persona {
     //--------------------------------
 
 }
+
+
+//   @ManyToOne(fetch = FetchType.LAZY)
+//   @JoinColumn(name = "almacen_id_almacen")
+//   private Almacen almacen;
+
+// @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+//     @JoinTable(name = "estante_ingredientes",
+//     joinColumns = @JoinColumn(name = "id_estante"), 
+//     inverseJoinColumns = @JoinColumn(name = "id_ingredientes"), 
+//     uniqueConstraints = @UniqueConstraint(columnNames = {"id_estante", "id_ingredientes" }))
+//     private List<Ingredientes> ingredientes;
