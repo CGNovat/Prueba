@@ -15,22 +15,21 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
 @Table(name = "persona")
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Persona{
+public class Persona {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long id_persona;
-    
+
     private String ci;
-    
+
     private String nombre;
 
     private String apellido;
@@ -39,13 +38,12 @@ public class Persona{
 
     private String celular;
 
+    // ---------------Relaciones--------------------------
 
-    //---------------Relaciones--------------------------
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "Id_tipo_persona")
+    private Tipo_Persona tipo_persona;
 
-    // @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    // @JoinColumn(name = "Id_tipo_persona")
-    // private Tipo_Persona tipo_persona;
-
-    //--------------------------
+    // --------------------------
 
 }
