@@ -1,0 +1,50 @@
+/* Estilos generales */
+.container {
+    padding: 20px;
+}
+
+/* Estilos para el formulario */
+.form-row {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+/* Estilos para los input y select */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilos para el botón */
+.btn-primary {
+    background-color: #021122;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #012246;
+}
+
+/* Estilos para el checkbox */
+.form-check-input {
+    margin-top: 3px;
+}
+
+/* Estilos para los márgenes en pantallas pequeñas */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    .col-md-3, .col-md-6 {
+        margin-bottom: 10px;
+    }
+}
