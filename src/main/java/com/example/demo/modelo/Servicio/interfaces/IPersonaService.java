@@ -10,7 +10,7 @@ public List<Persona> ListPersona(); //MOSTRAR TODOS LOS REGSITROS
 
     public Persona Guardar(Persona persona);  //GUARDAR REGISTRO
 
-    public Persona buscarPorId(Long id);  // MOSTRAR UN REGSITRO
+    public Persona buscarPorId(Long nPersona);  // MOSTRAR UN REGSITRO
 
     public void delete(Long id); // ELIMINAR REGISTRO
     
