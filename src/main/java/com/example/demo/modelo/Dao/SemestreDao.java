@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.modelo.Entity.Semestre;
 
 @Repository
-public interface SemestreDao  extends JpaRepository<Semestre,Long>{
-    
+public interface SemestreDao extends JpaRepository<Semestre, Long> {
+
 }

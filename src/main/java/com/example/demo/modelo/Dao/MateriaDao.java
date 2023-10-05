@@ -5,9 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.example.demo.modelo.Entity.Materia;
 
-
 @Repository
 public interface MateriaDao extends JpaRepository<Materia, Long> {
-    
-    
+
 }

@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.example.demo.modelo.Entity.Facultad;
 
-@Repository 
+@Repository
 public interface FacultadDao extends JpaRepository<Facultad, Long> {
-    
+
 }
