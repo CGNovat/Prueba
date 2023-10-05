@@ -43,13 +43,13 @@ public class Carrera{
 
     private String PerfilProfecional;
 
-    private String PoliticaExamen; // Sistema semestral/Anual
+    private String PoliticaExamen; // Sistema semestral/Anual 
 
     private String Dirección;
 
     private String FechaCreación;
 
-    //----------------RELACIONES---------------------
+    //----------------RELACIONES--------------------- pRUEBA 234
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "Id_materia")
