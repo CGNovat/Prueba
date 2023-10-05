@@ -6,6 +6,27 @@
     <title>Document</title>
 </head>
 <body>
+    <h2>Registrar Facultad</h2>
     
+    <form th:action="@{/registrar-facultad}" method="post" th:object="${facultad}">
+        <div>
+            <label for="nombre">Nombre de la Facultad:</label>
+            <input type="text" id="nombre_facul" name="nombre" th:field="*{nombre_facultad}" required>
+        </div>
+        <div>
+            <label for="nombre">Nombre de la Facultad:</label>
+            <input type="text" id="sig" name="sigla" th:field="*{sigla}" required>
+        </div>
+        
+        <!-- Otros campos para la facultad -->
+
+        <div>
+            <button type="submit">Registrar Facultad</button>
+        </div>
+    </form>
+    
+    <!-- Enlace para volver a la lista de facultades -->
+    <a th:href="@{/list-facultades}">Ver lista de facultades registradas</a>
+     
 </body>
 </html>
