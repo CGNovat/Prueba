@@ -13,8 +13,8 @@ import com.example.demo.modelo.Servicio.interfaces.ICarreraService;
 
 import lombok.RequiredArgsConstructor;
 
-// @RequiredArgsConstructor
-// @RequestMapping("/carrera")
+@RequiredArgsConstructor
+@RequestMapping("/carrera")
 @Controller
 public class CarreraController{
 
