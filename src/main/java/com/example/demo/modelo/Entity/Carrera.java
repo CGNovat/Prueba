@@ -8,6 +8,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -50,21 +51,31 @@ public class Carrera{
 
     //----------------RELACIONES---------------------
 
-    //-------
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "carrera")
-    private List<Materia> materia;
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "Id_materia")
+    private Materia materia;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "carrera")
+    //-------------------
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "Id_tipo_persona")
     private Tipo_Persona tipo_Persona;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "carrera")
-    private List<Semestre> semestres;
+    //----------------
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "carrera")
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_semestre")
+    private Semestre semestre;
+
+            //--------------------
+     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_facultad")
     private Facultad facultad;
 
+  @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Facultad> facultades;
 
 
     //-----------------------------------
-
+      
 }

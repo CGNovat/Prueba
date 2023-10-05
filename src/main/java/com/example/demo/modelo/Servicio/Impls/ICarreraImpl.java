@@ -34,11 +34,6 @@ public class ICarreraImpl implements ICarreraService{
         
     }
 
-    @Override
-    public void delete(Long id) {
-       
-        
-    }
 
 
 }

@@ -5,9 +5,7 @@ import java.util.List;
 //modifique la carpeta servicio att tefy
 import org.springframework.stereotype.Service;
 
-import com.example.demo.modelo.Dao.CarreraDao;
 import com.example.demo.modelo.Dao.FacultadDao;
-import com.example.demo.modelo.Entity.Carrera;
 import com.example.demo.modelo.Entity.Facultad;
 import com.example.demo.modelo.Servicio.interfaces.IFacultadService;
 

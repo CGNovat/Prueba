@@ -12,6 +12,6 @@ public interface ICarreraService {
 
     public Carrera buscarPorId(Long id);  // MOSTRAR UN REGSITRO
 
-    public void delete(Long id); // ELIMINAR REGISTRO
+    // public void delete(Long id); // ELIMINAR REGISTRO
     
 }

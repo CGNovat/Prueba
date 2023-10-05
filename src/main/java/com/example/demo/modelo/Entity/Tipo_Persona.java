@@ -8,7 +8,9 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -44,11 +46,18 @@ public class Tipo_Persona {
 
     //---------------RELACIONES---------------------
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "tipo_persona")
-    private List<Persona> personas;
+    // @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    // @JoinColumn(name = "id_persona")
+    // private List<Persona> personas;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "tipo_persona")
-    private List<Carrera> carreras;
+    //-------------------------
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_carrera")
+    private Facultad facultad;
+
+  @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Persona> personas;
 
     //--------------------------------
 
