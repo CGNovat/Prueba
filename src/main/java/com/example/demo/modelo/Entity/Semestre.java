@@ -45,17 +45,17 @@ public class Semestre{
 
     //-----------------------------------RELACIONES-----------------------------------------------
 
-      @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_carrera")
-    private Facultad facultad;
+  //     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+  //   @JoinColumn(name = "id_carrera")
+  //   private Facultad facultad;
 
-  @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Carrera> carrera;
+  // @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+  //   private List<Carrera> carrera;
 
-    //-----------
+  //   //-----------
     
-     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Materia materia;
+  //    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+  //   private Materia materia;
 
     //----------------------------------------------------------------------------------
 

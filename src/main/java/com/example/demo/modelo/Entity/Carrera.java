@@ -31,11 +31,11 @@ public class Carrera{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_carrera;
 
-    private boolean Estado;
+    private String Estado;
 
     private String nombre;
 
-    private String Especialización;
+    private String Especializacion;
 
     private String Vision;
 
@@ -45,35 +45,35 @@ public class Carrera{
 
     private String PoliticaExamen; // Sistema semestral/Anual 
 
-    private String Dirección;
+    private String Direccion;
 
-    private String FechaCreación;
+    private String FechaCreacion;
 
-    //----------------RELACIONES--------------------- pRUEBA 234
+    //----------------RELACIONES--------------------- PRUEBA 234
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "Id_materia")
-    private Materia materia;
+  //   @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+  //   @JoinColumn(name = "Id_materia")
+  //   private Materia materia;
 
-    //-------------------
+  //   //-------------------
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "Id_tipo_persona")
-    private Tipo_Persona tipo_Persona;
+  //   @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+  //   @JoinColumn(name = "Id_tipo_persona")
+  //   private Tipo_Persona tipo_Persona;
 
-    //----------------
+  //   //----------------
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_semestre")
-    private Semestre semestre;
+  //   @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+  //   @JoinColumn(name = "id_semestre")
+  //   private Semestre semestre;
 
-            //--------------------
-     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_facultad")
-    private Facultad facultad;
+  //           //--------------------
+  //    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+  //   @JoinColumn(name = "id_facultad")
+  //   private Facultad facultad;
 
-  @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Facultad> facultades;
+  // @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+  //   private List<Facultad> facultades;
 
 
     //-----------------------------------

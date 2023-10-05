@@ -38,17 +38,17 @@ public class Materia{
 
     //----------------RELACIONES---------------------
 
-     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_carrera")
-    private Carrera carrera;
+  //    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+  //   @JoinColumn(name = "id_carrera")
+  //   private Carrera carrera;
 
-  @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Carrera> carreras;
+  // @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+  //   private List<Carrera> carreras;
 
-    //-----------------
+  //   //-----------------
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "materia")
-    private Semestre semestre;
+  //   @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "materia")
+  //   private Semestre semestre;
 
     //----------------------------------------
 }

@@ -32,9 +32,9 @@ public class Facultad {
 
   // -------------------RELACIONES--------------
 
-  @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-  @JoinColumn(name = "id_carrera")
-  private Carrera carrera;
+  // @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+  // @JoinColumn(name = "id_carrera")
+  // private Carrera carrera;
 
   // ---------------------------------
 

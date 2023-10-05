@@ -70,11 +70,11 @@
 
     //     }
 
-        // model.addAttribute("Identificador", "Dato que se desea enviar")
+    //     model.addAttribute("Identificador", "Dato que se desea enviar")
 
-        // model.addAttribute("listaAlmacenes", listaAlmacen);
+    //     model.addAttribute("listaAlmacenes", listaAlmacen);
 
-        // -----------------------Variables Thymeleaf---------------------
+    //     -----------------------Variables Thymeleaf---------------------
 
     //     model.addAttribute("tipobusqueda", "/almacen/listar");
 

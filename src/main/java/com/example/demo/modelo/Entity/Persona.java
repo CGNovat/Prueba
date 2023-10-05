@@ -40,9 +40,9 @@ public class Persona {
 
     // ---------------Relaciones--------------------------
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "Id_tipo_persona")
-    private Tipo_Persona tipo_persona;
+    // @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    // @JoinColumn(name = "Id_tipo_persona")
+    // private Tipo_Persona tipo_persona;
 
     // --------------------------
 

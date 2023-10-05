@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-@RequestMapping("/materia")
+@RequestMapping("/persona")
 @Controller
 public class TipoPersonaController {
     

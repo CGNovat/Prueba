@@ -52,12 +52,12 @@ public class Tipo_Persona {
 
     //-------------------------
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_carrera")
-    private Facultad facultad;
+  //   @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+  //   @JoinColumn(name = "id_carrera")
+  //   private Facultad facultad;
 
-  @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Persona> personas;
+  // @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+  //   private List<Persona> personas;
 
     //--------------------------------
 
