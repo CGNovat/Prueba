@@ -1,6 +1,8 @@
 package com.example.demo.Controller;
 
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,18 +19,23 @@ import lombok.RequiredArgsConstructor;
 @Controller
 public class PersonaController {
 
-    private final IPersonaService personaService;
-    
-// @Autowired
-    // private IPersonaService personaService;
-@GetMapping("/listar")
-public String listarPersonas(Model model){
-    
-    List<Persona> listaPersonas;
-    listaPersonas = personaService.ListPersona();
-    model.addAttribute("listarPersonas", listaPersonas);
-    return "/listarPersona";
-    
-}
+    @Autowired
+    private IPersonaService personaService;
+
+    //     //--------------METODO PARA MOSTRAR LAS CARRERAS REGISTRADAS--------------
+      @GetMapping("/listar")
+    public String listarCAString(Model model) {
+
+        List<Persona> listaPersonas;
+
+        listaPersonas = personaService.ListPersona();
+        
+        model.addAttribute("listaPersonas", listaPersonas);
+
+        return "lista_registrados/List_Persona";
+
+    }
 
 }
+
+
