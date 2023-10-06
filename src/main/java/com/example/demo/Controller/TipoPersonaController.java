@@ -12,10 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.example.demo.modelo.Entity.Carrera;
 import com.example.demo.modelo.Entity.Tipo_Persona;
-import com.example.demo.modelo.Servicio.Impls.ITipo_PersonaImpl;
-import com.example.demo.modelo.Servicio.interfaces.ICarreraService;
 import com.example.demo.modelo.Servicio.interfaces.ITipo_PersonaService;
 
 import lombok.RequiredArgsConstructor;

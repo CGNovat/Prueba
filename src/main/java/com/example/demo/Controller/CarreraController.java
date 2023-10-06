@@ -36,16 +36,7 @@ public class CarreraController{
         
         model.addAttribute("listaCarreras", listaCarrera);
 
-        return "lista_registrados/List_Carrera";
-
-    }
-
-    //--------------------------------------------
-    
-     //--------------METODO PARA REGISTRAR LAS CARRERAS--------------
-    
-        @GetMapping("/formulario")
-    public String mostrarFormularioRegistro(Model model) {
+        //....................
 
         model.addAttribute("carrera", new Carrera());
 
@@ -55,8 +46,28 @@ public class CarreraController{
 
         model.addAttribute("ruta", "/carrera/registrar");
 
-        return "Formularios/Form_Carreras";
+        return "lista_registrados/List_Carrera";
+
     }
+
+    //--------------------------------------------
+    
+     //--------------METODO PARA REGISTRAR LAS CARRERAS--------------
+    
+    //     @GetMapping("/formulario")
+    // public String mostrarFormularioRegistro(Model model) {
+
+    //     model.addAttribute("carrera", new Carrera());
+
+    //     //-------------Variables Thymeleaf------------
+
+    //     model.addAttribute("tipoFormulario", "registrar");
+
+    //     model.addAttribute("ruta", "/carrera/registrar");
+
+    //     return "lista_registrados/List_Carrera";
+        
+    // }
 
     // ---------Metodo para guardar los datos de la carrera--------------
 
@@ -70,7 +81,7 @@ public class CarreraController{
         // --------------------Variables Thymeleaf---------------------
         flash.addFlashAttribute("exitoso", "Carrera Registrada");
 
-        return "redirect:/carrera/formulario";
+        return "redirect:/carrera/listar";
 
     }
 
@@ -92,7 +103,7 @@ public class CarreraController{
 
         model.addAttribute("ruta", "/carrera/modificar");
 
-        return "Formularios/Form_Carreras";
+        return "lista_registrados/List_Carrera";
     }
 
     // -------Metodo para guardar los datos modificados----------
@@ -108,6 +119,23 @@ public class CarreraController{
 
         return "redirect:/carrera/listar";
 
+    }
+
+        @GetMapping("/eliminar/{id_carrera}")
+    public String eliminar(@PathVariable(name = "id_carrera") Long idCarrera, RedirectAttributes flash) {
+        //quando usars PathVariable sempre usa GetMapping
+
+        Carrera carrera;
+
+        carrera = carreraServicio.buscarPorId(idCarrera);
+
+        carrera.setEstado("X");
+
+        carreraServicio.Guardar(carrera);
+
+        flash.addFlashAttribute("exitoso", "Carrera Eliminada");
+
+        return "redirect:/carrera/listar";
     }
 
 
