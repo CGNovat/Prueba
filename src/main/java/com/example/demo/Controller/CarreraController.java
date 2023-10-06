@@ -76,10 +76,10 @@ public class CarreraController{
 
 
  /*-----------------------------------------------------------------------
-                    Funciones para modificar los datos del almacen
+                    Funciones para modificar 
     -----------------------------------------------------------------------*/
 
-    // ----Metodo para buscar el y mostrar los datos del almacen-------
+    // ----Metodo para buscar el y mostrar-------
 
     @GetMapping("/modificar/{id}")
     public String mostrarFormularioModificacion(Model model, @PathVariable Long id) {
@@ -95,7 +95,7 @@ public class CarreraController{
         return "Formularios/Form_Carreras";
     }
 
-    // -------Metodo para guardar los datos modificados del almacen----------
+    // -------Metodo para guardar los datos modificados----------
 
     @PostMapping("/modificar")
     public String modificar(@ModelAttribute Carrera carrera, RedirectAttributes flash) {
