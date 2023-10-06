@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <form th:object="${carrera}" method="post" >
+    <form th:object="${carrera}" method="post" th:action="@{${ruta}}">
         
   
         <input type="hidden" th:field="*{id_carrera}">

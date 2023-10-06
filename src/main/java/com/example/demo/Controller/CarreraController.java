@@ -50,6 +50,8 @@ public class CarreraController{
 
         model.addAttribute("tipoFormulario", "registrar");
 
+        model.addAttribute("ruta", "/almacen/registrar");
+
         return "Formularios/Form_Carreras";
     }
 
