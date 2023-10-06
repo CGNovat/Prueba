@@ -32,9 +32,17 @@ public class Persona {
 
     private String apellido;
 
-    private String telefojoFijo;
+    private String genero;
+
+    private String estado_civil;
+
+    private String telefonoFijo;
+
+    private String direccion;
 
     private String celular;
+
+    private String Estado;
 
     // ---------------Relaciones--------------------------
 

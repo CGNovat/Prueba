@@ -4,7 +4,6 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.modelo.Dao.PersonaDao;
-import com.example.demo.modelo.Dao.PersonaDao;
 import com.example.demo.modelo.Entity.Persona;
 import com.example.demo.modelo.Servicio.interfaces.IPersonaService;
 import lombok.RequiredArgsConstructor;
@@ -15,7 +14,6 @@ public class IPersonaImpl implements IPersonaService {
 
  private final PersonaDao personaDao;
 
-       
     @Override
     public List<Persona> ListPersona() {
         
