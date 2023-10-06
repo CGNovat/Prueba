@@ -36,7 +36,7 @@ public class CarreraController{
         
         model.addAttribute("listaCarreras", listaCarrera);
 
-        //....................
+        //.................... Codigo para Registrar.................
 
         model.addAttribute("carrera", new Carrera());
 
@@ -74,6 +74,8 @@ public class CarreraController{
     @PostMapping("/registrar")
     public String registrar(@ModelAttribute Carrera carrera, RedirectAttributes flash) {
 
+        
+
         carrera.setEstado("A");
 
         carreraServicio.Guardar(carrera);
@@ -94,6 +96,14 @@ public class CarreraController{
 
     @GetMapping("/modificar/{id}")
     public String mostrarFormularioModificacion(Model model, @PathVariable Long id) {
+
+        List<Carrera> listaCarrera;
+
+        listaCarrera = carreraServicio.ListCarrera();
+        
+        model.addAttribute("listaCarreras", listaCarrera);
+
+        //.................... Codigo para modificar.................
 
         model.addAttribute("carrera", carreraServicio.buscarPorId(id));
 
