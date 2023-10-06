@@ -26,7 +26,7 @@ public class Facultad {
 
   private String nombre_facultad;
   private String sigla;
-  private Boolean estado_facultad;
+  private String estado_facultad;
 
   // -------------------RELACIONES--------------
 
