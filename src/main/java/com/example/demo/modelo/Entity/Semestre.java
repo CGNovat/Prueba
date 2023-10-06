@@ -23,7 +23,7 @@ public class Semestre {
 
   private String Periodo;
 
-  private String Duración;
+  private String Duracion;
 
   private String Estado;
 
