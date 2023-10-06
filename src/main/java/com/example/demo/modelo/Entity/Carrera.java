@@ -22,7 +22,7 @@ import lombok.Setter;
 public class Carrera {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.IDENTITY) //1 ,2 ,3 ,8 
   private Long id_carrera;
 
   private String Estado;
