@@ -7,13 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.demo.modelo.Entity.Facultad;
-import com.example.demo.modelo.Entity.Persona;
 import com.example.demo.modelo.Servicio.interfaces.IFacultadService;
 
 import lombok.RequiredArgsConstructor;
@@ -54,21 +52,21 @@ public class FacultadController {
     }
 
     //editar facultad
-    @RequestMapping(value = "/id_facultad/{id_facultad}",method = RequestMethod.GET)
-    public String Editar_facultad(Model model ,@PathVariable(name = "id_facultad",required = false)Long id_facultad){
+    // @RequestMapping(value = "/id_facultad/{id_facultad}",method = RequestMethod.GET)
+    // public String Editar_facultad(Model model ,@PathVariable(name = "id_facultad",required = false)Long id_facultad){
 
-        // Persona persona = personaService.findOne(id_persona);
-        Facultad facultad =facultadService.findOne(id_facultad);
-        // persona.setEstado_persona("A");
-        facultad.setEstado_facultad("A");
+    //     // Persona persona = personaService.findOne(id_persona);
+    //     Facultad facultad =facultadService.findOne(id_facultad);
+    //     // persona.setEstado_persona("A");
+    //     facultad.setEstado_facultad("A");
 
-        // model.addAttribute("persona", persona);
-        model.addAttribute("facultad", facultad);
-        // model.addAttribute("carreras", carrera.findAll()); // ----------------------------------
-        // model.addAttribute("carrera", carrera);
+    //     // model.addAttribute("persona", persona);
+    //     model.addAttribute("facultad", facultad);
+    //     // model.addAttribute("carreras", carrera.findAll()); // ----------------------------------
+    //     // model.addAttribute("carrera", carrera);
 
-        return "/list-facultades";
-    }
+    //     return "/list-facultades";
+    // }
 
 
 

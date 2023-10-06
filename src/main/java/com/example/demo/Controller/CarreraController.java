@@ -50,7 +50,7 @@ public class CarreraController{
 
         model.addAttribute("tipoFormulario", "registrar");
 
-        model.addAttribute("ruta", "/almacen/registrar");
+        model.addAttribute("ruta", "/carrera/registrar");
 
         return "Formularios/Form_Carreras";
     }
@@ -67,7 +67,7 @@ public class CarreraController{
         // --------------------Variables Thymeleaf---------------------
         flash.addFlashAttribute("exitoso", "Carrera Registrada");
 
-        return "redirect:/Formularios/Form_Carreras";
+        return "redirect:/carrera/formulario";
 
     }
 
