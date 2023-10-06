@@ -74,6 +74,7 @@ public class PersonaController {
 
     @GetMapping("/eliminar/{id_persona}")
     public String eliminar(@PathVariable(name = "id_persona") Long idPersona, RedirectAttributes flash) {
+        //quando usars PathVariable sempre usa GetMapping
 
         Persona persona;
 
