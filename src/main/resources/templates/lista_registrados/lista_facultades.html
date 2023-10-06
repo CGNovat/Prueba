@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+  <div class="container">
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">nombre de facultad</th> <br>
+                <th scope="col">sigla</th> 
+                <th scope="col">operaciones</th>
+            </tr>
+        </thead>
+        <tbody class="table-light">
+            <tr th:each="facultad : ${listaFacultades}" th:if="${facultad.estado_facultad != 'X'}">
+                <td th:text="${facultad.nombre_facultad}"></td>
+                <td th:text="${facultad.sigla}"></td>
+                <td>  <a th:href="@{/facultad/eliminar/{id}(id=${facultad.id_facultad})}">Eliminar</a></td> 
+                </td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+
+</body>
+</html>

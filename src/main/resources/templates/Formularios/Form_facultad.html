@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form th:object="${facultad}" method="post" th:action="@{${ruta}}">
+        
+  
+        <input type="hidden" th:field="*{id_facultad}">
+
+  
+        <label for="nombre_facultad">Nombre de la facultad</label> <br>
+        <input type="text" th:field="*{nombre_facultad}" required>
+        <br>
+  
+        <label for="sigla">Sigla</label> <br>
+        <input type="text" th:field="*{sigla}" required>
+     
+        <br>
+  
+        <input type="submit" name="Enviar" th:value="${tipoFormulario}">
+  
+      </form>
+    
+     
+</body>
+</html>

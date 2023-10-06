@@ -6,10 +6,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.demo.modelo.Entity.Facultad;
 import com.example.demo.modelo.Servicio.interfaces.IFacultadService;
@@ -23,54 +25,105 @@ public class FacultadController {
 
     // @Autowired
     @Autowired IFacultadService facultadService;
-    // private IFacultadService facultadService;
-    // aqui comienza mi batalla :''''3
-    // -----------------------------------------------------------------------------------------------------------------------------------------------------------------
-    // Formulario en la vista HTML
-    @RequestMapping(value = "/Form-facultad", method = RequestMethod.GET)
-    public String Registro_Persona(Model model) {
-        // Obtén la lista de facultades desde el servicio
-        // List<Facultad> facultades = facultadService.obtenerTodasLasFacultades();
-        List<Facultad> facultades = facultadService.ListFacultad();
 
-        // Agrega la lista de facultades al modelo
-        model.addAttribute("facultades", facultades);
+    //--------------METODO PARA MOSTRAR LAS CARRERAS REGISTRADAS--------------
+    @GetMapping("/listar")
+    public String listarCAString(Model model) {
 
-        // Redirige a la vista "Form-facultad"
-        return "/Form-facultad";
+        List<Facultad> listaFacultad;
+
+        listaFacultad = facultadService.ListFacultad();
+        
+        model.addAttribute("listaFacultades", listaFacultad);
+
+        return "lista_registrados/lista_facultades";
+
     }
 
-    //guardar facultad
-    @PostMapping("/registrar-facultad")
-    public String registrarFacultad(@ModelAttribute("facultad") Facultad facultad) {
-        // Procesa y guarda la facultad en la base de datos
-        // facultadService.guardarFacultad(facultad);
+    //--------------METODO PARA REGISTRAR LAS FACULTADES--------------
+    
+    @GetMapping("/formulario")
+    public String mostrarFormularioRegistro(Model model) {
+
+        model.addAttribute("facultad", new Facultad());
+
+        //-------------Variables Thymeleaf------------
+
+        model.addAttribute("tipoFormulario", "registrar");
+        model.addAttribute("ruta", "/facultad/registrar");
+
+        return "Formularios/Form_facultad";
+    }
+
+    // ---------Metodo para guardar los datos de la facultad--------------
+
+    @PostMapping("/registrar")
+    public String registrar(@ModelAttribute Facultad facultad, RedirectAttributes flash) {
+
+        // facultad.setEstado_facultad("A");
+        facultad.setEstado_facultad("A");
+
         facultadService.Guardar(facultad);
 
-        // Después de registrar la facultad, redirige al usuario a la lista de facultades
-        return "redirect:/list-facultades";
+        // --------------------Variables Thymeleaf---------------------
+        flash.addFlashAttribute("exitoso", "Facultad Registrada");
+
+        return "redirect:/facultad/formulario";
     }
 
-    //editar facultad
-    // @RequestMapping(value = "/id_facultad/{id_facultad}",method = RequestMethod.GET)
-    // public String Editar_facultad(Model model ,@PathVariable(name = "id_facultad",required = false)Long id_facultad){
+    /*-----------------------------------------------------------------------
+                    Funciones para modificar 
+    -----------------------------------------------------------------------*/
 
-    //     // Persona persona = personaService.findOne(id_persona);
-    //     Facultad facultad =facultadService.findOne(id_facultad);
-    //     // persona.setEstado_persona("A");
-    //     facultad.setEstado_facultad("A");
+    // ----Metodo para buscar el y mostrar-------
 
-    //     // model.addAttribute("persona", persona);
-    //     model.addAttribute("facultad", facultad);
-    //     // model.addAttribute("carreras", carrera.findAll()); // ----------------------------------
-    //     // model.addAttribute("carrera", carrera);
+    @GetMapping("/modificar/{id}")
+    public String mostrarFormularioModificacion(Model model, @PathVariable Long id) {
 
-    //     return "/list-facultades";
-    // }
+        model.addAttribute("facultad", facultadService.buscarPorId(id));
+
+        // --------------------Variables Thymeleaf---------------------
+
+        model.addAttribute("tipoFormulario", "modificar");
+
+        model.addAttribute("ruta", "/facultad/modificar");
+
+        return "Formularios/Form_facultades";
+    }
+
+    // -------Metodo para guardar los datos modificados----------
+
+    @PostMapping("/modificar")
+    public String modificar(@ModelAttribute Facultad facultad, RedirectAttributes flash) {
+
+        facultad.setEstado_facultad("A");
+
+        facultadService.Guardar(facultad);
+
+        flash.addFlashAttribute("exitoso", "facultades Modificado");
+
+        return "redirect:/facultad/listar";
+
+    }
+
+    //----------------------------eliminar facutad---------------------------------------------------
+        @GetMapping("/eliminar/{id_facultad}")
+    public String eliminar(@PathVariable(name = "id_facultad") Long idfacultad, RedirectAttributes flash) {
+        //quando usars PathVariable sempre usa GetMapping
+
+        Facultad facultad;
+
+        facultad = facultadService.buscarPorId(idfacultad);
+
+        facultad.setEstado_facultad("X");
+
+        facultadService.Guardar(facultad);
+
+        flash.addFlashAttribute("exitoso", "facultad Eliminada");
+
+        return "redirect:/facultad/listar";
+    }
 
 
 
-
-
-    
 }

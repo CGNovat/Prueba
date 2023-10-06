@@ -10,7 +10,5 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/materia")
 @Controller
 public class MateriaController {
-
    
-    
 }
