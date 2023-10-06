@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -38,6 +39,8 @@ public class CarreraController{
         return "lista_registrados/List_Carrera";
 
     }
+
+    //--------------------------------------------
     
      //--------------METODO PARA REGISTRAR LAS CARRERAS--------------
     
@@ -68,6 +71,42 @@ public class CarreraController{
         flash.addFlashAttribute("exitoso", "Carrera Registrada");
 
         return "redirect:/carrera/formulario";
+
+    }
+
+
+ /*-----------------------------------------------------------------------
+                    Funciones para modificar los datos del almacen
+    -----------------------------------------------------------------------*/
+
+    // ----Metodo para buscar el y mostrar los datos del almacen-------
+
+    @GetMapping("/modificar/{id}")
+    public String mostrarFormularioModificacion(Model model, @PathVariable Long id) {
+
+        model.addAttribute("carrera", carreraServicio.buscarPorId(id));
+
+        // --------------------Variables Thymeleaf---------------------
+
+        model.addAttribute("tipoFormulario", "modificar");
+
+        model.addAttribute("ruta", "/carrera/modificar");
+
+        return "Formularios/Form_Carreras";
+    }
+
+    // -------Metodo para guardar los datos modificados del almacen----------
+
+    @PostMapping("/modificar")
+    public String modificar(@ModelAttribute Carrera carrera, RedirectAttributes flash) {
+
+        carrera.setEstado("A");
+
+        carreraServicio.Guardar(carrera);
+
+        flash.addFlashAttribute("exitoso", "Carrera Modificado");
+
+        return "redirect:/carrera/listar";
 
     }
 
