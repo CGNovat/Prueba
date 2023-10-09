@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.example.demo.modelo.Entity.Carrera;
 import com.example.demo.modelo.Entity.Semestre;
 import com.example.demo.modelo.Servicio.interfaces.ISemestreService;
 
@@ -106,6 +107,23 @@ public class SemestreController {
 
         return "redirect:/semestre/listar";
 
+    }
+
+     @GetMapping("/eliminar/{id_carrera}")
+    public String eliminar(@PathVariable(name = "id_carrera") Long idSemestre, RedirectAttributes flash) {
+        //quando usars PathVariable sempre usa GetMapping
+
+        Semestre semestre;
+
+        semestre = semestreServicio.buscarPorId(idSemestre);
+
+        semestre.setEstado("X");
+
+        semestreServicio.Guardar(semestre);
+
+        flash.addFlashAttribute("exitoso", "Semestre Eliminada");
+
+        return "redirect:/semestre/listar";
     }
 
 }

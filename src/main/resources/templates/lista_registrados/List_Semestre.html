@@ -28,15 +28,16 @@
             </thead>
             <tbody class="table-light">
                 <tr th:each="semestre : ${listaSemestres}" th:if="${semestre.estado != 'X'}">
-                    <td th:text="${persona.Periodo}"></td>
-                    <td th:text="${persona.Duracion}"></td>
-                    <td th:text="${persona.Fecha_Inicio}"></td>
-                    <td th:text="${persona.Fecha_Salida}"></td>
-                    <td th:text="${persona.Profesores_Asignados}"></td>
-                    <td th:text="${persona.Cursos_Ofrecidos}"></td>
+                    <td th:text="${semestre.Periodo}"></td>
+                    <td th:text="${semestre.Duracion}"></td>
+                    <td th:text="${semestre.Fecha_Inicio}"></td>
+                    <td th:text="${semestre.Fecha_Salida}"></td>
+                    <td th:text="${semestre.Profesores_Asignados}"></td>
+                    <td th:text="${semestre.Cursos_Ofrecidos}"></td>
 
                     <td>
-                        <a th:href="@{/semestre/eliminar/{id}(id=${semestre.id_semestre})}">Eliminar</a>
+                        <a th:href="@{/carrera/modificar/{id}(id=${carrera.id_carrera})}">Modificar</a>
+                        <a th:href="@{/carrera/eliminar/{id}(id=${carrera.id_carrera})}">Eliminar</a>
                     </td>
 
                 </tr>
